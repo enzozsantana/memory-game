@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
+const restartButton = document.querySelector('.restart-button');
 
 const characters = [
   'beth',
@@ -30,6 +31,7 @@ const checkEndGame = () => {
     if(disabledCards.length === 20) {
         clearInterval(this.loop);
         alert(`Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${timer.innerHTML} segundos`);
+        restartGame();
     }
 }
 
@@ -106,6 +108,11 @@ const startTimer = () => {
         const currentTime = +timer.innerHTML;
         timer.innerHTML = currentTime + 1;
     }, 1000);
+}
+
+const restartGame = () => {
+    restartButton.style.visibility = 'visible';
+    restartButton.addEventListener('click', () => window.location.reload());
 }
 
 window.onload = () => {

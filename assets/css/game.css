@@ -73,7 +73,7 @@ section {
     opacity: 0.5;
 }
 
-.restart {
+.restart-button {
     visibility: hidden;
     position: absolute;
     cursor: pointer;
